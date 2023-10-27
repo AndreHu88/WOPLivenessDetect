@@ -61,9 +61,9 @@
 		6AD85D3BD633A05411723CF1 /* Pods_WOPLivenessDetect_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WOPLivenessDetect_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8961DD8811A5B16F270393E4 /* WOPLivenessDetect.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WOPLivenessDetect.podspec; path = ../WOPLivenessDetect.podspec; sourceTree = "<group>"; };
-		9087595B67D499EB162DE9DF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		9485C2E3BD543E52A3E844DF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8961DD8811A5B16F270393E4 /* WOPLivenessDetect.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WOPLivenessDetect.podspec; path = ../WOPLivenessDetect.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9087595B67D499EB162DE9DF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9485C2E3BD543E52A3E844DF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9D8C7851434638B95EF3D676 /* Pods-WOPLivenessDetect_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WOPLivenessDetect_Example.debug.xcconfig"; path = "Target Support Files/Pods-WOPLivenessDetect_Example/Pods-WOPLivenessDetect_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6FC5A2CB1819FCB21003A9 /* Pods-WOPLivenessDetect_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WOPLivenessDetect_Tests.release.xcconfig"; path = "Target Support Files/Pods-WOPLivenessDetect_Tests/Pods-WOPLivenessDetect_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F25DA4C8CB62AB94431F8B7F /* Pods_WOPLivenessDetect_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WOPLivenessDetect_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +193,6 @@
 				5C627B3CCA2E16C98CF2AC4C /* Pods-WOPLivenessDetect_Tests.debug.xcconfig */,
 				CB6FC5A2CB1819FCB21003A9 /* Pods-WOPLivenessDetect_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

@@ -1,0 +1,22 @@
+{
+  "name": "WOPLivenessDetect",
+  "version": "0.1.0",
+  "summary": "A short description of WOPLivenessDetect.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/AndreHu88/WOPLivenessDetect",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "AndreHu88": "229376483@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/AndreHu88/WOPLivenessDetect.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "WOPLivenessDetect/Classes/**/*"
+}
