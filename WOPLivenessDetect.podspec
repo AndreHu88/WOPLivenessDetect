@@ -39,6 +39,5 @@ Pod::Spec.new do |s|
     s.static_framework = true
     s.public_header_files = 'Pod/Classes/**/*.h'
     s.dependency 'GoogleMLKit/FaceDetection'
-    s.dependency 'Masonry', '1.1.0'
     
 end

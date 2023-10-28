@@ -7,7 +7,6 @@
 
 #import "WOPLivenessDetectViewController.h"
 #import "WOPLivenessDetector.h"
-#import <Masonry/Masonry.h>
 
 @interface WOPLivenessDetectViewController () <AVCaptureVideoDataOutputSampleBufferDelegate, WOPLivenessDetectorDelegate>
 
@@ -52,7 +51,6 @@ static NSString *const sessionQueueLabel = @"com.livenessDetect.sessionQueue";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-   
     [self initData];
     [self setUpCaptureSessionInputOutPut];
     [self setupSubViews];
@@ -90,35 +88,13 @@ static NSString *const sessionQueueLabel = @"com.livenessDetect.sessionQueue";
 
 - (void)setupViewLayouts {
     
-    [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(16);
-        make.top.offset(IPHONE_STATUSBAR_HEIGHT + 6);
-        make.width.height.mas_equalTo(20);
-    }];
-    
-    [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(IPHONE_NAVIGATIONBAR_HEIGHT + 40);
-        make.left.offset(100);
-        make.right.offset(-100);
-    }];
-    
-    [_tryAgainButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.offset(-100);
-        make.width.mas_equalTo(140);
-        make.height.mas_equalTo(40);
-        make.centerX.equalTo(self.view);
-    }];
-    
-    [_errorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(80);
-        make.top.offset(IPHONE_NAVIGATIONBAR_HEIGHT + 40);
-        make.centerX.equalTo(self.view);
-    }];
-    
-    [_loadingImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(80);
-        make.center.equalTo(self.resultImageView);
-    }];
+    _resultImageView.frame = self.previewRect;
+    _backButton.frame = CGRectMake(16, IPHONE_STATUSBAR_HEIGHT + 6, 20, 20);
+    _tipsLabel.frame = CGRectMake(60, IPHONE_NAVIGATIONBAR_HEIGHT + 40, DEVICE_WIDTH - 120, 50);
+    _tryAgainButton.frame = CGRectMake((DEVICE_WIDTH - 140) / 2, DEVICE_HEIGHT - INDICATOR_HEIGHT - 100, 140, 40);
+    _errorImageView.frame = CGRectMake((DEVICE_WIDTH - 80) / 2, IPHONE_NAVIGATIONBAR_HEIGHT + 40, 80, 80);
+    _loadingImageView.frame = CGRectMake((DEVICE_WIDTH - 80) / 2, IPHONE_NAVIGATIONBAR_HEIGHT + 140, 80, 80);
+    _loadingImageView.center = self.resultImageView.center;
 }
 
 #pragma mark - Action
@@ -139,12 +115,7 @@ static NSString *const sessionQueueLabel = @"com.livenessDetect.sessionQueue";
     self.tryAgainButton.hidden = true;
     self.errorImageView.hidden = true;
     
-    [self.tipsLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(IPHONE_NAVIGATIONBAR_HEIGHT + 40);
-        make.left.offset(60);
-        make.right.offset(-60);
-    }];
-    
+    self.tipsLabel.frame = CGRectMake(60, IPHONE_NAVIGATIONBAR_HEIGHT + 40, DEVICE_WIDTH - 120, 50);
     [self.faceDetector reset];
 }
 
@@ -159,10 +130,7 @@ static NSString *const sessionQueueLabel = @"com.livenessDetect.sessionQueue";
     self.tryAgainButton.hidden = false;
     self.errorImageView.hidden = false;
     
-    [self.tipsLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.errorImageView.mas_bottom).offset(30);
-        make.centerX.equalTo(self.view);
-    }];
+    self.tipsLabel.frame = CGRectMake(60, IPHONE_NAVIGATIONBAR_HEIGHT + 40 + 80 + 30, DEVICE_WIDTH - 120, 50);
 }
 
 /** 活体检测成功 */
