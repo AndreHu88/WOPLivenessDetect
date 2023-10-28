@@ -4,10 +4,17 @@ platform :ios, '10.0'
 
 target 'WOPLivenessDetect_Example' do
   pod 'WOPLivenessDetect', :path => '../'
+  
+  post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = 10.0
+      end
+    end
+  end
 
   target 'WOPLivenessDetect_Tests' do
     inherit! :search_paths
 
-    
   end
 end
